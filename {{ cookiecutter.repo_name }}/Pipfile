@@ -12,6 +12,8 @@ coverage = "*"
 awscli = "*"
 flake8 = "*"
 python-dotenv = "*"
+setuptools = "*"
+wheel = "*"
 
 [requires]
 python_version = "3.7"
