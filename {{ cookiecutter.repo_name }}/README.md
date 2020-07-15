@@ -54,4 +54,33 @@ Project Organization
 
 --------
 
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+Installation
+------------
+```.env
+$ cookiecutter https://github.com/marutimw/cookiecutter-data-science.git
+$ cd <project-name>
+$ make create_environment
+$ pipenv shell
+```
+
+Testing
+------------
+```.env
+$ cd <project-name>
+$ pipenv shell
+$ make test_environment
+$ make unittests
+```
+
+Help
+------------
+```.env
+$ cd <project-name>
+$ pipenv shell
+$ make
+```
+
+Note
+------------
+* Add all the python dependencies to Pipfile and run `pipenv install` to install those dependencies.
+* Use `exit` command to escape the virtual environment  
