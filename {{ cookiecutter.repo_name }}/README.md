@@ -64,21 +64,18 @@ $ pipenv shell
 Testing
 ------------
 ```.env
-$ cd <project-name>
-$ pipenv shell
 $ make test_environment
 $ make unittests
 ```
 
-Help
+List Commands
 ------------
 ```.env
-$ cd <project-name>
-$ pipenv shell
 $ make
 ```
 
 Note
 ------------
 * Add all the python dependencies to Pipfile and run `pipenv install` to install those dependencies.
-* Use `exit` command to escape the virtual environment  
+* Use `exit` command to escape the virtual environment
+* add environment variables to `.env` file
