@@ -74,9 +74,10 @@ Note
 ------------
 * Add all the python dependencies to Pipfile and run `pipenv install` to install those dependencies.
 * Use `exit` command to escape the virtual environment
-* add environment variables to `.env` file
-* add constants/thresholds to `config.py` file
-
+* Add environment variables to `.env` file
+* Add constants/thresholds to `config.py` file
+* All the unittests are inside `tests` directory and each filename starts with `test_<actual-filename>`
+* Maintain the same nested folder structure inside `tests` as is present in the `src`
 
 ToDo
 ------------
