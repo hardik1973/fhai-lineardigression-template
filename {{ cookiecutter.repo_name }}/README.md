@@ -79,3 +79,10 @@ Note
 * Add all the python dependencies to Pipfile and run `pipenv install` to install those dependencies.
 * Use `exit` command to escape the virtual environment
 * add environment variables to `.env` file
+* add constants/thresholds to `config.py` file
+
+
+ToDo
+------------
+* Add framework for performance evaluation
+* Add framework for hyper-parameter tuning
