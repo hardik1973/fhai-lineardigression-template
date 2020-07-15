@@ -67,6 +67,17 @@ List Commands
 ------------
 ```.env
 $ make
+
+clean               |   Delete all compiled Python files 
+create_environment  |   Set up python interpreter environment. Install Python Dependencies. 
+data                |   Make Dataset 
+lint                |   Lint using flake8 
+sync_data_from_s3   |   Download Data from S3 
+sync_data_to_s3     |   Upload Data to S3 
+sync_models_from_s3 |   Download Models from S3 
+sync_models_to_s3   |   Upload Models to S3 
+test_environment    |   Test python environment is setup correctly 
+unittests           |   Run unittests
 ```
 
 Note
