@@ -14,11 +14,18 @@ Project Organization
     │   ├── processed      <- The final, canonical data sets for modeling.
     │   └── raw            <- The original, immutable data dump.
     │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
+    ├── models             <- Trained and serialized models, model predictions, or model summaries.
+    |                         Naming convention is a number (for ordering),
+    |                         date in the format DD_MM_YYYY, 
+    |                         the creator's first-name, 
+    |                         and a short `-` delimited description, e.g. 
+    |                         `1.0-16_07_2020-maruti-initial-data-exploration`.      
     │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
+    ├── notebooks          <- Jupyter notebooks. 
+    |                         Naming convention is a number (for ordering),
+    │                         the creator's first-name, 
+    |                         and a short `-` delimited description, e.g.
+    │                         `1.0-maruti-initial-data-exploration`.
     │
     ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
     │
