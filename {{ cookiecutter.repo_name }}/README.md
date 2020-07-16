@@ -50,7 +50,7 @@ Project Organization
 Installation
 ------------
 ```.env
-$ cookiecutter https://github.com/marutimw/cookiecutter-data-science.git
+$ cookiecutter https://github.com/marutimw/fhai-lineardigression-template.git
 $ cd <project-name>
 $ make create_environment
 $ pipenv shell
