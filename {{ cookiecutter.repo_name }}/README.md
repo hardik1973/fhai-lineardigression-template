@@ -13,6 +13,12 @@ Project Organization
     │   ├── interim        <- Intermediate data that has been transformed.
     │   ├── processed      <- The final, canonical data sets for modeling.
     │   └── raw            <- The original, immutable data dump.
+    |
+    |                         Naming convention is a number (for ordering),
+    |                         date in the format DD_MM_YYYY,
+    |                         the creator's first-name,
+    |                         and a short `-` delimited description, e.g.
+    |                         `1.0-16_07_2020-maruti-linkedin-dump-v1`.          
     │
     ├── models             <- Trained and serialized models, model predictions, or model summaries.
     |                         Naming convention is a number (for ordering),
