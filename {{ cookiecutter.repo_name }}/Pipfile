@@ -3,11 +3,6 @@ name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
 
-[[source]]
-url = "https://${ARTIFACTORY_USERNAME}:${ARTIFACTORY_PASSWORD}@meltwater.jfrog.io/meltwater/api/pypi/fhai-kg-pypi/simple"
-verify_ssl = true
-name = "fhai-kg-pypi"
-
 [dev-packages]
 
 [packages]
