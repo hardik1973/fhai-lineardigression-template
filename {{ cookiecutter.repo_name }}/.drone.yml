@@ -1,0 +1,65 @@
+---
+globals:
+  image: &build_image python:3.7.7-stretch
+
+
+kind: pipeline
+name: Unit tests
+
+steps:
+  - name: lint
+    image: *build_image
+    pull: always
+    commands:
+      - pip install flake8
+      - flake8 --statistics ./package-name > stats.txt || true
+      - echo "\n"
+      - cat stats.txt
+      - echo "\n"
+
+  - name: unit tests
+    image: *build_image
+    pull: always
+    commands:
+      - python3 setup.py install
+      - python3 setup.py test
+    environment:
+      ARTIFACTORY_USERNAME:
+        from_secret: artifactory_username
+      ARTIFACTORY_PASSWORD:
+        from_secret: artifactory_password
+      AWS_ACCESS_KEY_ID:
+        from_secret: aws_access_key_id
+      AWS_SECRET_ACCESS_KEY:
+        from_secret: aws_secret_access_key
+
+  - name: deploy to artifactory
+    image: *build_image
+    pull: always
+    commands:
+      - python3 setup.py sdist bdist_wheel
+      - python3 -m pip install twine
+      - twine upload -u $${ARTIFACTORY_USERNAME} -p $${ARTIFACTORY_PASSWORD} --repository-url https://meltwater.jfrog.io/meltwater/api/pypi/fhai-kg-pypi-local dist/*
+    environment:
+      ARTIFACTORY_USERNAME:
+        from_secret: artifactory_username
+      ARTIFACTORY_PASSWORD:
+        from_secret: artifactory_password
+    when:
+      branch:
+        - master
+
+  - name: git tag
+    image: *build_image
+    commands:
+      - git config user.email "meltwater-fairhairio"
+      - git config user.name fairhairio.git.notify@meltwater.com
+      - git tag -a "$(python3 setup.py -V)-build-${DRONE_BUILD_NUMBER}" -m "Tag automatically created by Drone [skip ci]"
+      - git push --tags
+    when:
+      branch:
+        - master
+
+trigger:
+  ref:
+    - refs/heads/**
