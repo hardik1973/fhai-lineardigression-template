@@ -1,4 +1,4 @@
-{{cookiecutter.project_name}}
+{{cookiecutter.repo_name}}
 ==============================
 
 {{cookiecutter.description}}
@@ -106,5 +106,9 @@ ToDo
 ------------
 * Add framework for performance evaluation
 * Add framework for hyper-parameter tuning
-* Add drone CI/CD set up
+* ~~Add drone CI/CD set up~~
 * Add file for versioning
+* Add MLflow/DVC for pipelining
+* Add option to have project specific version of python
+* Add template for integration tests
+* Customize pep8 version to follow
