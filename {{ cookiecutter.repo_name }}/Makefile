@@ -1,4 +1,4 @@
-.PHONY: clean data lint requirements sync_data_to_s3 sync_data_from_s3
+.PHONY: clean data lint sync_data_to_s3 sync_data_from_s3 sync_models_to_s3 sync_models_from_s3 create_environment unittests
 
 #################################################################################
 # GLOBALS                                                                       #
@@ -69,21 +69,26 @@ endif
 create_environment:
 ifeq (True,$(HAS_CONDA))
 		@echo ">>> Detected conda, creating conda environment."
-ifeq (3,$(findstring 3,$(PYTHON_INTERPRETER)))
-	conda create --name $(PROJECT_NAME) python=3
+ifeq (3.8,$(findstring 3.8,$(PYTHON_INTERPRETER)))
+	conda create --name $(PROJECT_NAME) python=3.8
 else
-	conda create --name $(PROJECT_NAME) python=2.7
+	conda create --name $(PROJECT_NAME) python=3.7
 endif
 		@echo ">>> New conda env created. Activate with:\nsource activate $(PROJECT_NAME)"
 else
 	$(PYTHON_INTERPRETER) -m pip install -q pipenv
+ifeq (3.8,$(findstring 3.8,$(PYTHON_INTERPRETER)))
+	@echo "\n[requires] \npython_version = '3.8'" >> ./Pipfile
+else
+	@echo "\n[requires] \npython_version = '3.7'" >> ./Pipfile
+endif
 	pipenv install
 	@echo ">>> New virtualenv created. Activate with:\npipenv shell"
 endif
 
 ## Test python environment is setup correctly
 test_environment:
-	$(PYTHON_INTERPRETER) test_environment.py
+	$(PYTHON_INTERPRETER) cli/test_environment.py
 
 ## Run unittests
 unittests:

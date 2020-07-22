@@ -112,3 +112,4 @@ ToDo
 * Add option to have project specific version of python
 * Add template for integration tests
 * Customize pep8 version to follow
+* Add Docker
