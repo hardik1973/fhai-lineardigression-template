@@ -8,7 +8,7 @@ PROJECT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 BUCKET = {{ cookiecutter.s3_bucket }}
 PROFILE = {{ cookiecutter.aws_profile }}
 PROJECT_NAME = {{ cookiecutter.repo_name }}
-PYTHON_INTERPRETER = {{ cookiecutter.python_interpreter }}
+PYTHON_INTERPRETER = python3.7
 
 ifeq (,$(shell which conda))
 HAS_CONDA=False
@@ -68,20 +68,11 @@ endif
 ## Set up python interpreter environment. Install Python Dependencies.
 create_environment:
 ifeq (True,$(HAS_CONDA))
-		@echo ">>> Detected conda, creating conda environment."
-ifeq (3.8,$(findstring 3.8,$(PYTHON_INTERPRETER)))
-	conda create --name $(PROJECT_NAME) python=3.8
-else
+	@echo ">>> Detected conda, creating conda environment."
 	conda create --name $(PROJECT_NAME) python=3.7
-endif
-		@echo ">>> New conda env created. Activate with:\nsource activate $(PROJECT_NAME)"
+	@echo ">>> New conda env created. Activate with:\nsource activate $(PROJECT_NAME)"
 else
 	$(PYTHON_INTERPRETER) -m pip install -q pipenv
-ifeq (3.8,$(findstring 3.8,$(PYTHON_INTERPRETER)))
-	@echo "\n[requires] \npython_version = '3.8'" >> ./Pipfile
-else
-	@echo "\n[requires] \npython_version = '3.7'" >> ./Pipfile
-endif
 	pipenv install
 	@echo ">>> New virtualenv created. Activate with:\npipenv shell"
 endif
