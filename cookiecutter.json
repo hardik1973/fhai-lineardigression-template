@@ -2,7 +2,6 @@
     "repo_name": "repo_name",
     "author_name": "Your name (or your organization/company/team)",
     "description": "A short description of the project",
-    "open_source_license": ["MIT", "BSD-3-Clause", "No license file"],
     "s3_bucket": "[OPTIONAL] your-bucket-for-syncing data and models (do not include 's3://')",
     "aws_profile": "default"
 }
