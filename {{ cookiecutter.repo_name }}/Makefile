@@ -81,7 +81,7 @@ endif
 test_environment:
 	$(PYTHON_INTERPRETER) cli/test_environment.py
 
-## Run unittests
+## Run unittests and integration tests
 tests:
 	$(PYTHON_INTERPRETER) -m unittest discover -v
 #################################################################################

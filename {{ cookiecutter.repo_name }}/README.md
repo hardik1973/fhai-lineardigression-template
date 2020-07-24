@@ -94,7 +94,7 @@ sync_data_to_s3     |   Upload Data to S3
 sync_models_from_s3 |   Download Models from S3 
 sync_models_to_s3   |   Upload Models to S3 
 test_environment    |   Test python environment is setup correctly 
-tests               |   Run unittests
+tests               |   Run unittests and integration tests
 ```
 
 Note
@@ -113,7 +113,7 @@ ToDo
 * ~~Add drone CI/CD set up~~
 * Add file for versioning
 * Add MLflow/DVC for pipelining
-* Add option to have project specific version of python
-* Add template for integration tests
+* ~~Add option to have project specific version of python~~
+* ~~Add template for integration tests~~
 * Customize pep8 version to follow
 * Add Docker
