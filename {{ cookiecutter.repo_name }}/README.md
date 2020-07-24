@@ -110,10 +110,10 @@ ToDo
 ------------
 * Add framework for performance evaluation
 * Add framework for hyper-parameter tuning
-* ~~Add drone CI/CD set up~~
+* ~~Add drone CI/CD set up~~ (Done)
 * Add file for versioning
 * Add MLflow/DVC for pipelining
-* ~~Add option to have project specific version of python~~
-* ~~Add template for integration tests~~
+* ~~Add option to have project specific version of python~~ (Done)
+* ~~Add template for integration tests~~ (Done)
 * Customize pep8 version to follow
 * Add Docker
