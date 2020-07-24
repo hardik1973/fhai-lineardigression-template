@@ -32,6 +32,10 @@ Project Organization
     │                         the creator's first-name, 
     |                         and a short `-` delimited description, e.g.
     │                         `1.0-maruti-initial-data-exploration`.
+    ├── tests
+    │   ├── integration    <- Place for testing scripts for integration tests
+    │       ├── test_data  <- Place to store data for integration tests
+    │   ├── unit           <- Place for testing scripts for unittests
     │
     ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
     │
@@ -90,7 +94,7 @@ sync_data_to_s3     |   Upload Data to S3
 sync_models_from_s3 |   Download Models from S3 
 sync_models_to_s3   |   Upload Models to S3 
 test_environment    |   Test python environment is setup correctly 
-unittests           |   Run unittests
+tests               |   Run unittests
 ```
 
 Note

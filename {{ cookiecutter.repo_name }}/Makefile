@@ -1,4 +1,4 @@
-.PHONY: clean data lint sync_data_to_s3 sync_data_from_s3 sync_models_to_s3 sync_models_from_s3 create_environment unittests
+.PHONY: clean data lint sync_data_to_s3 sync_data_from_s3 sync_models_to_s3 sync_models_from_s3 create_environment tests
 
 #################################################################################
 # GLOBALS                                                                       #
@@ -82,7 +82,7 @@ test_environment:
 	$(PYTHON_INTERPRETER) cli/test_environment.py
 
 ## Run unittests
-unittests:
+tests:
 	$(PYTHON_INTERPRETER) -m unittest discover -v
 #################################################################################
 # PROJECT RULES                                                                 #
