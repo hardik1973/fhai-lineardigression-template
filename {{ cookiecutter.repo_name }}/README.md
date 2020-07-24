@@ -117,6 +117,3 @@ ToDo
 * ~~Add template for integration tests~~ (Done)
 * Customize pep8 version to follow
 * Add Docker
-
-
-
