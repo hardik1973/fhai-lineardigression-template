@@ -24,7 +24,7 @@ $ conda install cookiecutter
 To start a new project, run:
 ------------
 
-```$ cookiecutter https://github.com/drivendata/cookiecutter-data-science```
+Refer To: https://github.com/marutimw/fhai-lineardigression-template/tree/master/%7B%7B%20cookiecutter.repo_name%20%7D%7D#installation
 
 
 [![asciicast](https://asciinema.org/a/244658.svg)](https://asciinema.org/a/244658)
